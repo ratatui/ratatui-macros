@@ -51,7 +51,7 @@ mod tests {
         assert_eq!(line, Line::from(vec!["hello".into(), "hello".into()]));
 
         // vec count syntax with span
-        let line = line!["hello"; 2];
-        assert_eq!(line, Line::from(vec![crate::raw!("hello"), "hello".into()]));
+        let line = line![Span::raw("hello"); 2];
+        assert_eq!(line, Line::from(vec!["hello".into(), "hello".into()]));
     }
 }
