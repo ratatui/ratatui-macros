@@ -35,7 +35,7 @@
 /// [`Line`]: crate::text::Line
 /// [`Span`]: crate::text::Span
 /// [`raw!`]: crate::raw
-/// [`styled!`]: crate::raw
+/// [`styled!`]: crate::styled
 #[macro_export]
 macro_rules! line {
     () => {
