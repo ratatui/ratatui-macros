@@ -4,17 +4,38 @@
 ///
 /// # Examples
 ///
+/// * Create a [`Line`] containing a vector of [`Span`]s:
+///
 /// ```rust
 /// # use ratatui::prelude::*;
 /// use ratatui_macros::{line, raw};
 ///
 /// let line = line!["hello", "world"];
-/// let line = line![raw!("hello {}", "world"), raw!("goodbye {}", "world")];
 /// let line = line!["hello".red(), "world".red().bold()];
+/// ```
+///
+/// * Create a [`Line`] from a given [`Span`] and size:
+///
+/// ```rust
+/// # use ratatui::prelude::*;
+/// use ratatui_macros::line;
+///
 /// let line = line!["hello"; 2];
 /// ```
 ///
+/// * Use [`raw!`] or [`styled!`] macros inside [`line!`] macro for formatting.
+///
+/// ```rust
+/// # use ratatui::prelude::*;
+/// use ratatui_macros::{line, raw, styled};
+///
+/// let line = line![raw!("hello {}", "world"), styled!(Modifier::BOLD, "goodbye {}", "world")];
+/// ```
+///
 /// [`Line`]: crate::text::Line
+/// [`Span`]: crate::text::Span
+/// [`raw!`]: crate::raw
+/// [`styled!`]: crate::raw
 #[macro_export]
 macro_rules! line {
     () => {
