@@ -24,11 +24,11 @@ macro_rules! line {
       ratatui::text::Line::from(vec![$span.into(); $n])
     };
     ($($span:expr),+ $(,)?) => {{
-        let mut line = ratatui::text::Line::default();
+        ratatui::text::Line::from(vec![
         $(
-            line.push_span($span);
-         )+
-         line
+            $span.into(),
+        )+
+        ])
     }};
 }
 
