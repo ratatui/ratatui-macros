@@ -34,6 +34,7 @@ macro_rules! line {
 
 #[cfg(test)]
 mod tests {
+    use crate::raw;
     use ratatui::prelude::*;
 
     #[test]
@@ -43,7 +44,7 @@ mod tests {
         assert_eq!(line, Line::from(vec!["hello".into(), "world".into()]));
 
         // raw instead line
-        let line = line![crate::raw!("hello"), "world"];
+        let line = line![raw!("hello"), "world"];
         assert_eq!(line, Line::from(vec!["hello".into(), "world".into()]));
 
         // vec count syntax
