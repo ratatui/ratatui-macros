@@ -2,7 +2,8 @@
 ///
 /// `span!` is similar to the [`format!`] macro, but it returns a [`Span`] instead of a `String`.
 ///
-/// The first argument is a [`Style`] or any type that is convertible to [`Style`] (e.g. [`Color`]).
+/// If semicolon follows the first argument, then the first argument is a [`Style`] and a styled [`Span`] will be created.
+/// Otherwise, the [`Span`] will be created as a raw span (i.e. with style set to `Style::default()`).
 ///
 /// # Examples
 ///
@@ -42,6 +43,7 @@
 /// [`Color`]: crate::style::Color
 /// [`Style`]: crate::style::Style
 /// [`Span`]: crate::text::Span
+/// [`Style`]: crate::style::Style
 #[macro_export]
 macro_rules! span {
     ($style:expr; $($arg:tt)*) => {
