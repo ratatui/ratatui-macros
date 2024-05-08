@@ -145,7 +145,7 @@ let line = line!["hello", format!("{name}")];
 let line = line!["bye"; 2];
 ```
 
-## Line
+## Text
 
 The `text!` macro creates a `Text` that contains a sequence of lines. It is similar to the `vec!` macro.
 
