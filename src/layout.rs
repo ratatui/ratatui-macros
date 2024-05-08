@@ -194,8 +194,6 @@ macro_rules! vertical {
 #[macro_export]
 macro_rules! horizontal {
     ($( $constraint:tt )+) => {
-        ratatui::layout::Layout::default()
-            .direction(ratatui::layout::Direction::Horizontal)
-            .constraints($crate::constraints!( $($constraint)+ ))
+        ratatui::layout::Layout::horizontal($crate::constraints!( $($constraint)+ ))
     };
 }
