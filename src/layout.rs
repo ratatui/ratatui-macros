@@ -171,9 +171,7 @@ macro_rules! constraints {
 #[macro_export]
 macro_rules! vertical {
     ($( $constraint:tt )+) => {
-        ratatui::layout::Layout::default()
-            .direction(ratatui::layout::Direction::Vertical)
-            .constraints($crate::constraints!( $($constraint)+ ))
+        ratatui::layout::Layout::vertical($crate::constraints!( $($constraint)+ ))
     };
 }
 
