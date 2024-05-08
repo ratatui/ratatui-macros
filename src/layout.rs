@@ -6,8 +6,8 @@
 /// # Examples
 ///
 /// ```
+/// use ratatui::prelude::*;
 /// use ratatui_macros::constraint;
-/// use ratatui::prelude::Constraint;
 /// assert_eq!(constraint!(>= 3 + 4), Constraint::Min(7));
 /// assert_eq!(constraint!(<= 3 + 4), Constraint::Max(7));
 /// assert_eq!(constraint!(== 1 / 3), Constraint::Ratio(1, 3));
@@ -18,22 +18,22 @@
 #[macro_export]
 macro_rules! constraint {
     ( == $token:tt % ) => {
-        ratatui::prelude::Constraint::Percentage($token)
+        ratatui::layout::Constraint::Percentage($token)
     };
     ( >= $expr:expr ) => {
-        ratatui::prelude::Constraint::Min($expr)
+        ratatui::layout::Constraint::Min($expr)
     };
     ( <= $expr:expr ) => {
-        ratatui::prelude::Constraint::Max($expr)
+        ratatui::layout::Constraint::Max($expr)
     };
     ( == $num:tt / $denom:tt ) => {
-        ratatui::prelude::Constraint::Ratio($num as u32, $denom as u32)
+        ratatui::layout::Constraint::Ratio($num as u32, $denom as u32)
     };
     ( == $expr:expr ) => {
-        ratatui::prelude::Constraint::Length($expr)
+        ratatui::layout::Constraint::Length($expr)
     };
     ( ~ $expr:expr ) => {
-        ratatui::prelude::Constraint::Fill($expr)
+        ratatui::layout::Constraint::Fill($expr)
     };
 }
 
@@ -171,8 +171,8 @@ macro_rules! constraints {
 #[macro_export]
 macro_rules! vertical {
     ($( $constraint:tt )+) => {
-        ratatui::prelude::Layout::default()
-            .direction(ratatui::prelude::Direction::Vertical)
+        ratatui::layout::Layout::default()
+            .direction(ratatui::layout::Direction::Vertical)
             .constraints($crate::constraints!( $($constraint)+ ))
     };
 }
@@ -194,8 +194,8 @@ macro_rules! vertical {
 #[macro_export]
 macro_rules! horizontal {
     ($( $constraint:tt )+) => {
-        ratatui::prelude::Layout::default()
-            .direction(ratatui::prelude::Direction::Horizontal)
+        ratatui::layout::Layout::default()
+            .direction(ratatui::layout::Direction::Horizontal)
             .constraints($crate::constraints!( $($constraint)+ ))
     };
 }
