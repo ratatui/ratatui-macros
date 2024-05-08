@@ -14,7 +14,7 @@
 /// let line = line!["hello".red(), "world".red().bold()];
 /// ```
 ///
-/// * Create a [`Line`] from a given [`Span`] and size:
+/// * Create a [`Line`] from a given [`Span`] repeated some amount of times:
 ///
 /// ```rust
 /// # use ratatui::prelude::*;
