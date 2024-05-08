@@ -154,8 +154,17 @@ use ratatui::prelude::*;
 use ratatui_macros::{span, line, text};
 
 let name = "world!";
-let text = text![span!(Modifier::BOLD; "hello"), line![format!("{name}")]];
+let text = text!["hello", format!("{name}")];
 let text = text!["bye"; 2];
+```
+
+It is even possible to use `span!` and `line!` in the `text!` macro:
+
+```rust
+use ratatui::prelude::*;
+use ratatui_macros::{span, line, text};
+let name = "Bye!!!";
+let text = text![line!["hello", "world".bold()], span!(Modifier::BOLD; "{name}")];
 ```
 
 ## Contributing

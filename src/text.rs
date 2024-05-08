@@ -63,7 +63,7 @@ mod tests {
         assert_eq!(text, Text::from(vec!["hello".into(), "world".into()]));
 
         // explicit use of span and line
-        let text = text![crate::span!("hello"), crate::line!["world"]];
+        let text = text![crate::line!("hello"), crate::span!["world"]];
         assert_eq!(text, Text::from(vec!["hello".into(), "world".into()]));
 
         // vec count syntax
