@@ -41,7 +41,7 @@ macro_rules! text {
         ratatui::text::Text::default()
     };
     ($line:expr; $n:expr) => {
-      ratatui::text::Text::from(vec![$line.into(); $n])
+        ratatui::text::Text::from(vec![$line.into(); $n])
     };
     ($($line:expr),+ $(,)?) => {{
         ratatui::text::Text::from(vec![
