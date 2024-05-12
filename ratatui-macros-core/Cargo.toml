@@ -1,0 +1,13 @@
+[package]
+name = "ratatui-macros-core"
+version = "0.1.0"
+edition = "2021"
+
+[dev-dependencies]
+colored-diff = "0.2.3"
+
+[dependencies]
+syn = { version = "2.0.63", features = ["extra-traits", "full", "fold"] }
+quote = "1.0.36"
+proc-macro2 = "1.0.82"
+proc-macro-error = "1.0.4"

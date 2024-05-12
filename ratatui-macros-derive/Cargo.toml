@@ -1,0 +1,12 @@
+[package]
+name = "ratatui-macros-derive"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+proc-macro = true
+
+[dependencies]
+ratatui-macros-core = { version = "0.1.0", path = "../ratatui-macros-core" }
+proc-macro-error = "1.0"
+proc-macro2 = "1.0"
