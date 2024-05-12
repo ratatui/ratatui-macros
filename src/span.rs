@@ -53,7 +53,7 @@ macro_rules! span {
         ratatui::text::Span::raw(format!($string, $($arg)*))
     };
     ($style:expr, $($arg:tt)*) => {
-        compile_error!("first parameter must be a `ratatui::style::Style` followed by a semi-colon")
+        compile_error!("first parameter must be a formatting specifier followed by a comma OR a `ratatui::style::Style` followed by a semi-colon")
     };
     ($style:expr; $($arg:tt)*) => {
         ratatui::text::Span::styled(format!($($arg)*), $style)
