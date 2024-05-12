@@ -46,11 +46,17 @@
 /// [`Style`]: crate::style::Style
 #[macro_export]
 macro_rules! span {
+    ($string:literal) => {
+        ratatui::text::Span::raw(format!($string))
+    };
+    ($string:literal, $($arg:tt)*) => {
+        ratatui::text::Span::raw(format!($string, $($arg)*))
+    };
+    ($style:expr, $($arg:tt)*) => {
+        compile_error!("first parameter must be a style followed by a semi-colon")
+    };
     ($style:expr; $($arg:tt)*) => {
         ratatui::text::Span::styled(format!($($arg)*), $style)
-    };
-    ($($arg:tt)*) => {
-        ratatui::text::Span::raw(format!($($arg)*))
     };
 }
 
