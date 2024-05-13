@@ -2,6 +2,8 @@
 name = "ratatui-macros-core"
 version = "0.1.0"
 edition = "2021"
+description = "Core Ratatui Macros crate (for internal use only)"
+license = "MIT" # or any other appropriate license
 
 [dev-dependencies]
 colored-diff = "0.2.3"

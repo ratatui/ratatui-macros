@@ -2,6 +2,8 @@
 name = "ratatui-macros-derive"
 version = "0.1.0"
 edition = "2021"
+description = "Proc Macro crate for Ratatui (for internal use only)"
+license = "MIT" # or any other appropriate license
 
 [lib]
 proc-macro = true
