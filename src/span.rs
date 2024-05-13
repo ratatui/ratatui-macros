@@ -48,7 +48,7 @@
 ///
 /// ```compile_fail
 /// # use ratatui::prelude::*;
-/// use ratatui_macros::span;
+/// # use ratatui_macros::span;
 /// let span = span!(Modifier::BOLD, "hello world");
 /// ```
 ///
@@ -56,7 +56,7 @@
 ///
 /// ```rust
 /// # use ratatui::prelude::*;
-/// use ratatui_macros::span;
+/// # use ratatui_macros::span;
 /// let span = span!(Modifier::BOLD; "hello world");
 /// ```
 ///
@@ -64,7 +64,7 @@
 ///
 /// ```compile_fail
 /// # use ratatui::prelude::*;
-/// use ratatui_macros::span;
+/// # use ratatui_macros::span;
 /// let span = span!("hello", "world");
 /// ```
 ///
@@ -72,7 +72,7 @@
 ///
 /// ```rust
 /// # use ratatui::prelude::*;
-/// use ratatui_macros::span;
+/// # use ratatui_macros::span;
 /// let span = span!("hello {}", "world");
 /// ```
 ///
