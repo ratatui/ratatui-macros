@@ -43,44 +43,8 @@ error: first parameter must be a formatting specifier followed by a comma OR a `
    |
    = note: this error originates in the macro `span` (in Nightly builds, run with -Z macro-backtrace for more info)
 
-error: argument never used
-  --> tests/ui/fails.rs:19:28
-   |
-19 |     let _ = span!("hello", "hello world");
-   |                   -------  ^^^^^^^^^^^^^ argument never used
-   |                   |
-   |                   formatting specifier missing
-
 error[E0527]: pattern requires 2 elements but array has 3
  --> tests/ui/fails.rs:8:9
   |
 8 |     let [a, b] = constraints![
   |         ^^^^^^ expected 3 elements
-
-error[E0277]: the trait bound `Style: From<&str>` is not satisfied
-  --> tests/ui/fails.rs:21:19
-   |
-21 |     let _ = span!("hello"; "hello world");
-   |             ------^^^^^^^----------------
-   |             |     |
-   |             |     the trait `From<&str>` is not implemented for `Style`, which is required by `&str: Into<Style>`
-   |             required by a bound introduced by this call
-   |
-   = help: the following other types implement trait `From<T>`:
-             <Style as From<(Color, Color)>>
-             <Style as From<(Color, Color, Modifier)>>
-             <Style as From<(Color, Color, Modifier, Modifier)>>
-             <Style as From<(Color, Modifier)>>
-             <Style as From<(Modifier, Modifier)>>
-             <Style as From<crossterm::style::content_style::ContentStyle>>
-             <Style as From<Color>>
-             <Style as From<Modifier>>
-   = note: required for `&str` to implement `Into<Style>`
-note: required by a bound in `Span::<'a>::styled`
-  --> $CARGO/ratatui-0.26.2/src/text/span.rs
-   |
-   |     pub fn styled<T, S>(content: T, style: S) -> Self
-   |            ------ required by a bound in this associated function
-...
-   |         S: Into<Style>,
-   |            ^^^^^^^^^^^ required by this bound in `Span::<'a>::styled`
