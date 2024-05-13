@@ -42,7 +42,8 @@
 ///
 /// # Note
 ///
-/// The first parameter must be a formatting specifier followed by a comma OR a [`Style`] followed by a semicolon.
+/// The first parameter must be a formatting specifier followed by a comma OR
+/// anything that can be converted into a [`Style`] followed by a semicolon.
 ///
 /// For example, the following will fail to compile:
 ///
