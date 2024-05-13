@@ -16,7 +16,7 @@ fn main() {
 
     let _ = span!(Modifier::BOLD, "hello world");
 
-    // let _ = span!("hello", "hello world");
+    let _ = span!("hello", "hello world");
 
     // let _ = span!("hello"; "hello world");
 }
