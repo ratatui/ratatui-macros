@@ -1,5 +1,5 @@
 error: No rules expected the token `,` while trying to match the end of the macro
- --> tests/ui/fails.rs:5:5
+Error:  --> tests/ui/fails.rs:5:5
   |
 5 |     constraints![,];
   |     ^^^^^^^^^^^^^^^
@@ -7,7 +7,7 @@ error: No rules expected the token `,` while trying to match the end of the macr
   = note: this error originates in the macro `$crate::constraints` which comes from the expansion of the macro `constraints` (in Nightly builds, run with -Z macro-backtrace for more info)
 
 error: unexpected end of macro invocation
-  --> tests/ui/fails.rs:8:18
+Error:   --> tests/ui/fails.rs:8:18
    |
 8  |       let [a, b] = constraints![
    |  __________________^
@@ -24,7 +24,7 @@ note: while trying to match `==`
    = note: this error originates in the macro `$crate::constraints` which comes from the expansion of the macro `constraints` (in Nightly builds, run with -Z macro-backtrace for more info)
 
 error: no rules expected the token `;`
-  --> tests/ui/fails.rs:15:53
+Error:   --> tests/ui/fails.rs:15:53
    |
 15 |     let [a, b, c] = constraints![ == 1, == 10%, == 2; 4];
    |                                                     ^ no rules expected this token in macro call
@@ -36,7 +36,7 @@ note: while trying to match `%`
    |                   ^
 
 error: first parameter must be a formatting specifier followed by a comma OR a `Style` followed by a semicolon
-  --> tests/ui/fails.rs:17:13
+Error:   --> tests/ui/fails.rs:17:13
    |
 17 |     let _ = span!(Modifier::BOLD, "hello world");
    |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -44,7 +44,7 @@ error: first parameter must be a formatting specifier followed by a comma OR a `
    = note: this error originates in the macro `span` (in Nightly builds, run with -Z macro-backtrace for more info)
 
 error: argument never used
-  --> tests/ui/fails.rs:19:28
+Error:   --> tests/ui/fails.rs:19:28
    |
 19 |     let _ = span!("hello", "hello world");
    |                   -------  ^^^^^^^^^^^^^ argument never used
@@ -52,13 +52,13 @@ error: argument never used
    |                   formatting specifier missing
 
 error[E0527]: pattern requires 2 elements but array has 3
- --> tests/ui/fails.rs:8:9
+Error:  --> tests/ui/fails.rs:8:9
   |
 8 |     let [a, b] = constraints![
   |         ^^^^^^ expected 3 elements
 
 error[E0277]: the trait bound `Style: From<&str>` is not satisfied
-  --> tests/ui/fails.rs:21:19
+Error:   --> tests/ui/fails.rs:21:19
    |
 21 |     let _ = span!("hello"; "hello world");
    |             ------^^^^^^^----------------
@@ -67,14 +67,14 @@ error[E0277]: the trait bound `Style: From<&str>` is not satisfied
    |             required by a bound introduced by this call
    |
    = help: the following other types implement trait `From<T>`:
+             <Style as From<crossterm::style::content_style::ContentStyle>>
+             <Style as From<Color>>
+             <Style as From<Modifier>>
              <Style as From<(Color, Color)>>
              <Style as From<(Color, Color, Modifier)>>
              <Style as From<(Color, Color, Modifier, Modifier)>>
              <Style as From<(Color, Modifier)>>
              <Style as From<(Modifier, Modifier)>>
-             <Style as From<Color>>
-             <Style as From<Modifier>>
-             <Style as From<crossterm::style::content_style::ContentStyle>>
    = note: required for `&str` to implement `Into<Style>`
 note: required by a bound in `Span::<'a>::styled`
   --> $CARGO/ratatui-0.26.2/src/text/span.rs
