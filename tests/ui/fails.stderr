@@ -72,9 +72,9 @@ error[E0277]: the trait bound `Style: From<&str>` is not satisfied
              <Style as From<(Color, Color, Modifier, Modifier)>>
              <Style as From<(Color, Modifier)>>
              <Style as From<(Modifier, Modifier)>>
+             <Style as From<crossterm::style::content_style::ContentStyle>>
              <Style as From<Color>>
              <Style as From<Modifier>>
-             <Style as From<crossterm::style::content_style::ContentStyle>>
    = note: required for `&str` to implement `Into<Style>`
 note: required by a bound in `Span::<'a>::styled`
   --> $CARGO/ratatui-0.26.2/src/text/span.rs
