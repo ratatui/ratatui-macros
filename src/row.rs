@@ -56,7 +56,6 @@ macro_rules! row {
 
 #[cfg(test)]
 mod tests {
-    use crate::text;
     use ratatui::text::Text;
     use ratatui::widgets::Cell;
     use ratatui::widgets::Row;
@@ -84,6 +83,7 @@ mod tests {
             Row::new(vec![Cell::from("hello"), Cell::from("hello")])
         );
 
+        use crate::text;
         let rows = [
             row!["\u{f002}", "Find File", text!["ctrl+f"].right_aligned()],
             row!["\u{f021a}", "Open recent", text!["ctrl+r"].right_aligned()],
