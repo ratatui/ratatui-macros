@@ -23,7 +23,7 @@
 /// let row = row!["hello"; 2];
 /// ```
 ///
-/// * Use [`line!`] or [`span!`] macro inside [`row!`] macro.
+/// * Use [`text!`], [`line!`] or [`span!`] macro inside [`row!`] macro.
 ///
 /// ```rust
 /// # use ratatui::prelude::*;
