@@ -14,6 +14,15 @@
 /// let row = row!["hello".red(), "world".red().bold()];
 /// ```
 ///
+/// * Create an empty [`Row`]:
+///
+/// ```rust
+/// # use ratatui::prelude::*;
+/// use ratatui_macros::row;
+///
+/// let empty_row = row![];
+/// ```
+///
 /// * Create a [`Row`] from a given [`Cell`] repeated some amount of times:
 ///
 /// ```rust
