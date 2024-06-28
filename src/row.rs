@@ -56,9 +56,11 @@ macro_rules! row {
 
 #[cfg(test)]
 mod tests {
-    use ratatui::text::Text;
-    use ratatui::widgets::Cell;
-    use ratatui::widgets::Row;
+
+    use ratatui::{
+        text::Text,
+        widgets::{Cell, Row},
+    };
 
     #[test]
     fn row() {
@@ -85,25 +87,22 @@ mod tests {
 
         use crate::text;
         let rows = [
-            row!["\u{f002}", "Find File", text!["ctrl+f"].right_aligned()],
-            row!["\u{f021a}", "Open recent", text!["ctrl+r"].right_aligned()],
-            row!["\u{f0493}", "Open config", text!["ctrl+k"].right_aligned()],
+            row!["Find File", text!["ctrl+f"].right_aligned()],
+            row!["Open recent", text!["ctrl+r"].right_aligned()],
+            row!["Open config", text!["ctrl+k"].right_aligned()],
         ];
         assert_eq!(
             rows,
             [
                 Row::new([
-                    Cell::from("\u{f002}"),
                     Cell::from("Find File"),
                     Cell::from(Text::raw("ctrl+f").alignment(ratatui::layout::Alignment::Right)),
                 ]),
                 Row::new([
-                    Cell::from("\u{f021a}"),
                     Cell::from("Open recent"),
                     Cell::from(Text::raw("ctrl+r").alignment(ratatui::layout::Alignment::Right)),
                 ]),
                 Row::new([
-                    Cell::from("\u{f0493}"),
                     Cell::from("Open config"),
                     Cell::from(Text::raw("ctrl+k").alignment(ratatui::layout::Alignment::Right)),
                 ]),
