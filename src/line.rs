@@ -37,13 +37,13 @@
 #[macro_export]
 macro_rules! line {
     () => {
-        ratatui::text::Line::default()
+        ::ratatui::text::Line::default()
     };
     ($span:expr; $n:expr) => {
-      ratatui::text::Line::from(vec![$span.into(); $n])
+      ::ratatui::text::Line::from(vec![$span.into(); $n])
     };
     ($($span:expr),+ $(,)?) => {{
-        ratatui::text::Line::from(vec![
+        ::ratatui::text::Line::from(vec![
         $(
             $span.into(),
         )+
