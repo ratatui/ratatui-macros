@@ -5,3 +5,5 @@ mod line;
 mod row;
 mod span;
 mod text;
+
+pub use ratatui_proc_macros::*;
