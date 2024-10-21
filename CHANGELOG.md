@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.1](https://github.com/ratatui/ratatui-macros/compare/v0.5.0...v0.5.1) - 2024-10-21
+
+### Other
+
+- *(deps)* bump the cargo-dependencies group with 2 updates ([#73](https://github.com/ratatui/ratatui-macros/pull/73))
+- *(deps)* bump ratatui from 0.28.0 to 0.28.1 in the cargo-dependencies group ([#70](https://github.com/ratatui/ratatui-macros/pull/70))
+
 ## [0.5.0] - 2024-08-12
 
 ### 🐛 Bug Fixes
