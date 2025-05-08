@@ -1,5 +1,8 @@
 # Ratatui Macros
 
+> [!WARNING]  
+> This repo's code is now part of the main [Ratatui](https://github.com/ratatui/ratatui/) repo.
+
 [![Crates.io badge]][ratatui_macros crate] [![License badge]](./LICENSE)
 [![Docs.rs badge]][API Docs] [![CI Badge]][CI Status]
 [![Crate Downloads badge]][ratatui_macros crate]
